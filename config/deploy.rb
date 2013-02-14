@@ -1,8 +1,8 @@
 require 'bundler/capistrano'
 set :user, 'root'
 set :domain, 'klairvoyant.in'
-set :applicationdir, "projectdir.git"
-set :scm_passphrase, "billjo22"
+set :applicationdir, "backbone"
+#set :scm_passphrase, "billjo22"
 
 set :scm, 'git'
 set :repository,  "ssh://root@klairvoyant.in/~/projectdir.git"
