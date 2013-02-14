@@ -1,8 +1,8 @@
-require 'bundler/capistrano'
+require "bundler/capistrano"
 set :user, 'root'
 set :domain, 'klairvoyant.in'
-set :applicationdir, "backbone"
-#set :scm_passphrase, "billjo22"
+set :applicationdir, "/backbone"
+
 
 set :scm, 'git'
 set :repository,  "ssh://root@klairvoyant.in/~/projectdir.git"
@@ -25,6 +25,10 @@ set :deploy_via, :export
 default_run_options[:pty] = true  # Forgo errors when deploying from windows
 ssh_options[:keys] = %w(/home/john/.ssh/id_rsa)            # If you are using ssh_keysset :chmod755, "app config db lib public vendor script script/* public/disp*"set :use_sudo, false
 
+
+set :default_environment, {
+    'PATH' => "/home/john/.rvm/rubies/ruby-1.9.3-p362/bin/:$PATH"
+}
 # Passenger
 namespace :deploy do
   task :start do ; end
